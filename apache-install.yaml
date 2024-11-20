@@ -1,6 +1,6 @@
 ---
 - name: Install and start apache
-  hosts: web
+  hosts: node1
   become: true
 
   tasks:
