@@ -1,0 +1,28 @@
+---
+- name: Install and enable Cockpit on RHEL
+  hosts: all
+  become: yes
+  tasks:
+
+    - name: Ensure Cockpit package is installed
+      yum:
+        name: cockpit
+        state: present
+
+    - name: Start and enable Cockpit service
+      systemd:
+        name: cockpit
+        enabled: true
+        state: started
+
+    - name: Open firewall for Cockpit (port 9090)
+      firewalld:
+        service: cockpit
+        permanent: true
+        state: enabled
+        immediate: true
+
+    - name: Reload firewall
+      firewalld:
+        state: reloaded
+
