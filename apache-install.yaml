@@ -4,7 +4,7 @@
   become: true
 
   tasks:
-    - name: Ensure the httpd package is installed
+    - name: ensure the httpd package is installed
 	    ansible.builtin.package:
   	    name: httpd
         state: present
