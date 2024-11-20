@@ -5,9 +5,9 @@
 
   tasks:
     - name: Ensure the httpd package is installed
-	  ansible.builtin.package:
+	    ansible.builtin.package:
   	    name: httpd
-  	    state: present
+        state: present
 
     - name: Create the index.html file
       ansible.builtin.template:
