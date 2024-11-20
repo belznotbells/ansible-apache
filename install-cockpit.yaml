@@ -2,8 +2,8 @@
 - name: Install and enable Cockpit on RHEL
   hosts: node1
   become: yes
-  tasks:
 
+  tasks:
     - name: Ensure Cockpit package is installed
       yum:
         name: cockpit
