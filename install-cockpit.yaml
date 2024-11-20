@@ -11,7 +11,7 @@
 
     - name: Start and enable Cockpit service
       systemd:
-        name: cockpit
+        name: cockpit.socket
         enabled: true
         state: started
 
