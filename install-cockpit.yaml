@@ -15,14 +15,14 @@
         enabled: true
         state: started
 
-    - name: Open firewall for Cockpit (port 9090)
-      firewalld:
-        service: cockpit
-        permanent: true
-        state: enabled
-        immediate: true
+#    - name: Open firewall for Cockpit (port 9090)
+#      firewalld:
+#        service: cockpit
+#        permanent: true
+#        state: enabled
+#        immediate: true
 
-    - name: Reload firewall
-      firewalld:
-        state: reloaded
+#    - name: Reload firewall
+#      firewalld:
+#        state: reloaded
 
