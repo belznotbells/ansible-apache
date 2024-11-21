@@ -1,6 +1,6 @@
 ---
 - name: Install and enable Cockpit on RHEL
-  hosts: web
+  hosts: node1
   become: yes
 
   tasks:
