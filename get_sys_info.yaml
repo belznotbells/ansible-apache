@@ -1,0 +1,45 @@
+---
+- name: Gather system information from RHEL server
+  hosts: node2
+  become: true
+  tasks:
+
+    - name: Get hostname
+      command: hostname
+      register: hostname_output
+
+    - name: Print hostname
+      debug:
+        msg: "Hostname: {{ hostname_output.stdout }}"
+
+    - name: Get OS version
+      command: cat /etc/redhat-release
+      register: os_version_output
+
+    - name: Print OS version
+      debug:
+        msg: "OS Version: {{ os_version_output.stdout }}"
+
+    - name: Get CPU information
+      command: lscpu
+      register: cpu_info_output
+
+    - name: Print CPU information
+      debug:
+        msg: "CPU Info:\n{{ cpu_info_output.stdout }}"
+
+    - name: Get memory information
+      command: free -h
+      register: memory_info_output
+
+    - name: Print memory information
+      debug:
+        msg: "Memory Info:\n{{ memory_info_output.stdout }}"
+
+    - name: Get disk usage
+      command: df -h
+      register: disk_usage_output
+
+    - name: Print disk usage
+      debug:
+        msg: "Disk Usage:\n{{ disk_usage_output.stdout }}"
