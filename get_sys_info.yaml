@@ -1,6 +1,6 @@
 ---
 - name: Gather system information from RHEL server
-  hosts: node1
+  hosts: all
   become: true
   tasks:
 
